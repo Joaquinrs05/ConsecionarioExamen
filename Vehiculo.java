@@ -66,4 +66,11 @@ public class Vehiculo {
         this.tipoMotor = tipoMotor;
     }
 
+    public void actualizarKms(float kmExtra) {
+        this.Kms += kmExtra;
+    }
+
+    public void actualizarPrecioDia() {
+        this.precioDia *= 1.2f;
+    }
 }

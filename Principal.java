@@ -15,7 +15,7 @@ public class Principal {
     public static void main(String[] args) {
         while (true) {
             System.out.println(
-                    "a) Dar de alta un vehiculo\nb) Dar de alta un cliente\nc) Alquilar un vehiculo\nd) Listar vehiculos\ne) Devolver vehiculo\nPulse cualquier otra letra para salir");
+                    "----------\na) Dar de alta un vehiculo\nb) Dar de alta un cliente\nc) Alquilar un vehiculo\nd) Listar vehiculos\ne) Devolver vehiculo\nPulse cualquier otra letra para salir\n----------");
             System.out.print("Eleccion: ");
 
             op = sc.nextLine();
@@ -39,7 +39,15 @@ public class Principal {
 
             } else if (op.equalsIgnoreCase("d")) {
 
+                listarVehiculos();
+
             } else if (op.equalsIgnoreCase("e")) {
+
+                System.out.print("Matricula: ");
+                op = sc.nextLine();
+                System.out.print("Kms Extra: ");
+                f1 = Float.valueOf(sc.nextFloat());
+                miEmpresa.devolverVehiculo(op, f1);
 
             } else {
                 break;
@@ -100,5 +108,44 @@ public class Principal {
         tempCliente = miEmpresa.getColeccionCLiente().get(op2);
 
         return new Reserva(tempVehiculo, op, n1, tempCliente);
+    }
+
+    public static void listarVehiculos() {
+        while (true) {
+            System.out.print(
+                    "Elige que listar:\na) Coche\nb) Furgon\nc)Camion\nPulsa cualquier otra letra para salir\nEleccion: ");
+            op = sc.nextLine();
+
+            if (op.equalsIgnoreCase("a")) {
+
+                System.out.print("Plazas a buscar: ");
+                op = sc.nextLine();
+                System.out.print("Tipo de motor: ");
+                op2 = sc.nextLine();
+
+                for (Vehiculo i : miEmpresa.getListavehiculo()) {
+                    if (i instanceof Coche) {
+
+                    }
+                }
+
+            } else if (op.equalsIgnoreCase("b")) {
+
+                System.out.print("Carga del furgon: ");
+                op = sc.nextLine();
+                System.out.print("Plazas a buscar: ");
+                op2 = sc.nextLine();
+
+            } else if (op.equalsIgnoreCase("c")) {
+
+                System.out.print("Carga del camion: ");
+                op = sc.nextLine();
+                System.out.print("Longitud del camion: ");
+                op2 = sc.nextLine();
+
+            } else {
+                break;
+            }
+        }
     }
 }
